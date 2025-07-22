@@ -1,0 +1,27 @@
+{
+  "models": [
+    "deepseek-v3-0324",
+    "hermes3-405b",
+    "llama-4-scout-17b-16e-instruct",
+    "llama3.1-8b-instruct",
+    "llama3.3-70b-instruct-fp8"
+  ],
+  "N": 30,
+  "compare_type": "comparison",
+  "detection_type": "detection",
+  "overwrite": false,
+  "log_level": "INFO",
+  "timeout": 120,
+  "max_retries": 10,
+  "use_existing_results": true,
+  "dataset": "apps",
+  "references": [
+    "human",
+    "deepseek-v3-0324",
+    "hermes3-405b",
+    "llama-4-scout-17b-16e-instruct",
+    "llama3.1-8b-instruct",
+    "llama3.3-70b-instruct-fp8"
+  ],
+  "config": "experiments/apps/apps_n25_m5_20250701-1921/config.json"
+}

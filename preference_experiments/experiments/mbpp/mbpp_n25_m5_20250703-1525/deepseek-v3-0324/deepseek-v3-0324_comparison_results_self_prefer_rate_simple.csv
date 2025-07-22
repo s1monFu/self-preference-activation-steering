@@ -1,0 +1,6 @@
+,self_preference_rate
+human,0.9
+hermes3-405b,0.7333333333333333
+llama-4-scout-17b-16e-instruct,0.65
+llama3.1-8b-instruct,0.825
+llama3.3-70b-instruct-fp8,0.8181818181818182

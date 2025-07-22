@@ -1,0 +1,83 @@
+[2025-07-01 16:49:13] INFO: Experiment started: apps_n25_m2_20250701-1649
+[2025-07-01 16:49:13] INFO: Config: {
+  "models": [
+    "llama3.1-8b-instruct",
+    "hermes3-405b"
+  ],
+  "N": 25,
+  "compare_type": "comparison",
+  "detection_type": "detection",
+  "overwrite": false,
+  "log_level": "INFO",
+  "timeout": 120,
+  "max_retries": 10,
+  "use_existing_results": false,
+  "dataset": "apps",
+  "references": [
+    "llama3.1-8b-instruct",
+    "hermes3-405b"
+  ]
+}
+[2025-07-01 16:49:13] INFO: Loading data for dataset: apps, N=25, models=['llama3.1-8b-instruct', 'hermes3-405b']
+[2025-07-01 16:49:13] INFO: Loaded 25 keys for dataset apps
+[2025-07-01 16:49:13] INFO: Processing model: llama3.1-8b-instruct
+[2025-07-01 16:49:13] INFO: Running comparison experiment for llama3.1-8b-instruct
+[2025-07-01 16:49:14] INFO: Computed new result for (llama3.1-8b-instruct, hermes3-405b, 1)
+[2025-07-01 16:49:15] INFO: Computed new result for (llama3.1-8b-instruct, hermes3-405b, 3)
+[2025-07-01 16:49:16] INFO: Computed new result for (llama3.1-8b-instruct, hermes3-405b, 4)
+[2025-07-01 16:49:17] INFO: Computed new result for (llama3.1-8b-instruct, hermes3-405b, 5)
+[2025-07-01 16:49:17] INFO: Computed new result for (llama3.1-8b-instruct, hermes3-405b, 6)
+[2025-07-01 16:49:18] INFO: Computed new result for (llama3.1-8b-instruct, hermes3-405b, 8)
+[2025-07-01 16:49:19] INFO: Computed new result for (llama3.1-8b-instruct, hermes3-405b, 9)
+[2025-07-01 16:49:19] INFO: Computed new result for (llama3.1-8b-instruct, hermes3-405b, 10)
+[2025-07-01 16:49:20] INFO: Computed new result for (llama3.1-8b-instruct, hermes3-405b, 12)
+[2025-07-01 16:49:21] INFO: Computed new result for (llama3.1-8b-instruct, hermes3-405b, 13)
+[2025-07-01 16:49:21] INFO: Computed new result for (llama3.1-8b-instruct, hermes3-405b, 14)
+[2025-07-01 16:49:22] INFO: Computed new result for (llama3.1-8b-instruct, hermes3-405b, 15)
+[2025-07-01 16:49:22] INFO: Computed new result for (llama3.1-8b-instruct, hermes3-405b, 17)
+[2025-07-01 16:49:23] INFO: Computed new result for (llama3.1-8b-instruct, hermes3-405b, 18)
+[2025-07-01 16:49:24] INFO: Computed new result for (llama3.1-8b-instruct, hermes3-405b, 19)
+[2025-07-01 16:49:24] INFO: Computed new result for (llama3.1-8b-instruct, hermes3-405b, 20)
+[2025-07-01 16:49:25] INFO: Computed new result for (llama3.1-8b-instruct, hermes3-405b, 21)
+[2025-07-01 16:49:26] INFO: Computed new result for (llama3.1-8b-instruct, hermes3-405b, 22)
+[2025-07-01 16:49:27] INFO: Computed new result for (llama3.1-8b-instruct, hermes3-405b, 23)
+[2025-07-01 16:49:27] INFO: Computed new result for (llama3.1-8b-instruct, hermes3-405b, 24)
+[2025-07-01 16:49:28] INFO: Computed new result for (llama3.1-8b-instruct, hermes3-405b, 26)
+[2025-07-01 16:49:29] INFO: Computed new result for (llama3.1-8b-instruct, hermes3-405b, 27)
+[2025-07-01 16:49:29] INFO: Computed new result for (llama3.1-8b-instruct, hermes3-405b, 29)
+[2025-07-01 16:49:30] INFO: Computed new result for (llama3.1-8b-instruct, hermes3-405b, 30)
+[2025-07-01 16:49:30] INFO: Computed new result for (llama3.1-8b-instruct, hermes3-405b, 31)
+[2025-07-01 16:49:30] INFO: Saved comparison results to experiments/apps/apps_n25_m2_20250701-1649/llama3.1-8b-instruct/llama3.1-8b-instruct_comparison_results.json
+[2025-07-01 16:49:30] INFO: Saved simplified metrics for llama3.1-8b-instruct
+[2025-07-01 16:49:30] INFO: Sanity check passed: 25 results for llama3.1-8b-instruct
+[2025-07-01 16:49:30] INFO: Processing model: hermes3-405b
+[2025-07-01 16:49:30] INFO: Running comparison experiment for hermes3-405b
+[2025-07-01 16:49:33] INFO: Computed new result for (hermes3-405b, llama3.1-8b-instruct, 1)
+[2025-07-01 16:49:35] INFO: Computed new result for (hermes3-405b, llama3.1-8b-instruct, 3)
+[2025-07-01 16:49:38] INFO: Computed new result for (hermes3-405b, llama3.1-8b-instruct, 4)
+[2025-07-01 16:49:41] INFO: Computed new result for (hermes3-405b, llama3.1-8b-instruct, 5)
+[2025-07-01 16:49:44] INFO: Computed new result for (hermes3-405b, llama3.1-8b-instruct, 6)
+[2025-07-01 16:49:47] INFO: Computed new result for (hermes3-405b, llama3.1-8b-instruct, 8)
+[2025-07-01 16:49:49] INFO: Computed new result for (hermes3-405b, llama3.1-8b-instruct, 9)
+[2025-07-01 16:49:51] INFO: Computed new result for (hermes3-405b, llama3.1-8b-instruct, 10)
+[2025-07-01 16:49:54] INFO: Computed new result for (hermes3-405b, llama3.1-8b-instruct, 12)
+[2025-07-01 16:49:56] INFO: Computed new result for (hermes3-405b, llama3.1-8b-instruct, 13)
+[2025-07-01 16:49:58] INFO: Computed new result for (hermes3-405b, llama3.1-8b-instruct, 14)
+[2025-07-01 16:50:00] INFO: Computed new result for (hermes3-405b, llama3.1-8b-instruct, 15)
+[2025-07-01 16:50:02] INFO: Computed new result for (hermes3-405b, llama3.1-8b-instruct, 17)
+[2025-07-01 16:50:05] INFO: Computed new result for (hermes3-405b, llama3.1-8b-instruct, 18)
+[2025-07-01 16:50:07] INFO: Computed new result for (hermes3-405b, llama3.1-8b-instruct, 19)
+[2025-07-01 16:50:10] INFO: Computed new result for (hermes3-405b, llama3.1-8b-instruct, 20)
+[2025-07-01 16:50:14] INFO: Computed new result for (hermes3-405b, llama3.1-8b-instruct, 21)
+[2025-07-01 16:50:17] INFO: Computed new result for (hermes3-405b, llama3.1-8b-instruct, 22)
+[2025-07-01 16:50:19] INFO: Computed new result for (hermes3-405b, llama3.1-8b-instruct, 23)
+[2025-07-01 16:50:21] INFO: Computed new result for (hermes3-405b, llama3.1-8b-instruct, 24)
+[2025-07-01 16:50:23] INFO: Computed new result for (hermes3-405b, llama3.1-8b-instruct, 26)
+[2025-07-01 16:50:25] INFO: Computed new result for (hermes3-405b, llama3.1-8b-instruct, 27)
+[2025-07-01 16:50:28] INFO: Computed new result for (hermes3-405b, llama3.1-8b-instruct, 29)
+[2025-07-01 16:50:30] INFO: Computed new result for (hermes3-405b, llama3.1-8b-instruct, 30)
+[2025-07-01 16:50:34] INFO: Computed new result for (hermes3-405b, llama3.1-8b-instruct, 31)
+[2025-07-01 16:50:34] INFO: Saved comparison results to experiments/apps/apps_n25_m2_20250701-1649/hermes3-405b/hermes3-405b_comparison_results.json
+[2025-07-01 16:50:34] INFO: Saved simplified metrics for hermes3-405b
+[2025-07-01 16:50:34] INFO: Sanity check passed: 25 results for hermes3-405b
+[2025-07-01 16:50:34] INFO: Generating self-preference rate heatmap for this experiment...

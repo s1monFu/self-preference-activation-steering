@@ -1,0 +1,12 @@
+{
+  "compare_type": "comparison_preference",
+  "overwrite": false,
+  "log_level": null,
+  "config": null,
+  "dataset": "arena",
+  "models": [
+    "llama3.1-405b-instruct-fp8",
+    "llama3.1-70b-instruct-fp8",
+    "llama3.1-8b-instruct"
+  ]
+}

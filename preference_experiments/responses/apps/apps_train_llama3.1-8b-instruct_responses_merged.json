@@ -1,0 +1,92 @@
+{
+  "1": [
+    "q = int(input())\nfor _ in range(q):\n    n, m, k = map(int, input().split())\n    if k < max(n, m) or (k - max(n, m)) % 2 == 1:\n        print(-1)\n    else:\n        diagonal = k - max(n, m)\n        horizontal = abs(n) - max(n, m)\n        vertical = abs(m) - max(n, m)\n        print(diagonal + min(horizontal, vertical))"
+  ],
+  "3": [
+    "def solve():\n    n, k = map(int, input().split())\n    a = list(map(int, input().split()))\n    a.sort(reverse=True)\n    ans = a[0]\n    for i in range(min(k, n-1)):\n        ans += a[i+1]\n    print(ans)\n\nt = int(input())\nfor _ in range(t):\n    solve()"
+  ],
+  "4": [
+    "def solve():\n    n = int(input())\n    p = list(map(int, input().split()))\n    left = [0] * (n + 1)\n    right = [0] * (n + 1)\n    for i in range(n):\n        left[p[i]] = i\n    for i in range(n - 1, -1, -1):\n        right[p[i]] = i\n    ans = [0] * n\n    for i in range(1, n + 1):\n        if right[i] - left[i] == i - 1:\n            ans[left[i]] = 1\n    print(''.join(map(str, ans)))\n\nt = int(input())\nfor _ in range(t):\n    solve()"
+  ],
+  "5": [
+    "from collections import Counter\n\ndef solve():\n    n = int(input())\n    a = list(map(int, input().split()))\n    cnt = Counter(a)\n    ans = []\n    for i in range(1, n):\n        if cnt[a[i-1]] > 1 and cnt[a[n-1]] > 0:\n            l1 = i\n            l2 = n - i\n            if all(cnt[j] > 0 for j in range(1, l1+1)) and all(cnt[j] > 0 for j in range(l1+1, n+1)):\n                ans.append((l1, l2))\n    print(len(ans))\n    for l1, l2 in ans:\n        print(l1, l2)\n\nt = int(input())\nfor _ in range(t):\n    solve()"
+  ],
+  "6": [
+    "from collections import deque\n\ndef solve():\n    n, m = map(int, input().split())\n    graph = [[] for _ in range(n + 1)]\n    indegree = [0] * (n + 1)\n    for _ in range(m):\n        u, v = map(int, input().split())\n        graph[u].append(v)\n        indegree[v] += 1\n    queue = deque([i for i in range(1, n + 1) if indegree[i] == 0])\n    closed = set()\n    while queue:\n        u = queue.popleft()\n        closed.add(u)\n        for v in graph[u]:\n            indegree[v] -= 1\n            if indegree[v] == 0:\n                queue.append(v)\n    print(len(closed))\n    print(*sorted(closed))\n\nt = int(input())\nfor _ in range(t):\n    solve()"
+  ],
+  "8": [
+    "def solve():\n    n, k = map(int, input().split())\n    s = input()\n    w = s.count('W')\n    l = s.count('L')\n    if w >= n:\n        print(n)\n        return\n    if k >= l:\n        print(n)\n        return\n    ans = 0\n    i = 0\n    while i < n and k > 0 and s[i] == 'L':\n        i += 1\n        k -= 1\n    if i == n:\n        print(w * 2 - (n - w))\n        return\n    for j in range(i, n):\n        if s[j] == 'L' and k > 0:\n            k -= 1\n            ans += 1\n        ans += 2\n    print(ans)\n\nt = int(input())\nfor _ in range(t):\n    solve()"
+  ],
+  "9": [
+    "def solve():\n    s = input()\n    n = len(s)\n    a = 0\n    b = 0\n    i = 0\n    while i < n:\n        j = i\n        while j < n and s[j] == s[i]:\n            j += 1\n        if s[i] == '1':\n            if (j - i) % 2 == 0:\n                a += (j - i) // 2\n            else:\n                a += (j - i) // 2 + 1\n        i = j\n    print(a)\n\nt = int(input())\nfor _ in range(t):\n    solve()"
+  ],
+  "10": [
+    "def solve():\n    n = int(input())\n    p = list(map(int, input().split()))\n    ans = [p[0]]\n    for i in range(1, n - 1):\n        if p[i] > p[i - 1] and p[i] > p[i + 1]:\n            ans.append(p[i])\n        elif p[i] < p[i - 1] and p[i] < p[i + 1]:\n            ans.append(p[i])\n    ans.append(p[-1])\n    print(len(ans))\n    print(*ans)\n\nt = int(input())\nfor _ in range(t):\n    solve()"
+  ],
+  "12": [
+    "def solve():\n    n = int(input())\n    a = list(map(int, input().split()))\n    b = list(map(int, input().split()))\n    for i in range(n):\n        if a[i] > b[i] and -1 in a or a[i] < b[i] and 1 in a:\n            print(\"NO\")\n            return\n    print(\"YES\")\n\nt = int(input())\nfor _ in range(t):\n    solve()"
+  ],
+  "13": [
+    "t = int(input())\n\nfor _ in range(t):\n    n, g, b = map(int, input().split())\n    min_days = (n + 1) // 2\n    days_in_good_season = min_days // (g // (b + g)) * (g // (b + g))\n    days_in_bad_season = (n - days_in_good_season) // (b // (b + g)) * (b // (b + g))\n    print(max(days_in_good_season + days_in_bad_season * (b + g), n))"
+  ],
+  "14": [
+    "def check_square(a1, b1, a2, b2):\n    return (a1 == b1 == a2 or a1 == b1 == b2 or a1 == a2 == b1 or a1 == a2 == b2 or\n            (a1 == a2 and b1 == b2) or (a1 == b2 and a2 == b1))\n\nt = int(input())\nfor _ in range(t):\n    a1, b1 = map(int, input().split())\n    a2, b2 = map(int, input().split())\n    if check_square(a1, b1, a2, b2):\n        print(\"Yes\")\n    else:\n        print(\"No\")"
+  ],
+  "15": [
+    "def solve():\n    a, b, x, y = map(int, input().split())\n    return max(min(x, a-x) * min(y, b-y), min(min(x, a-x), min(y, b-y)) * min(min(x, a-x), min(y, b-y)))\n\nt = int(input())\nfor _ in range(t):\n    print(solve())"
+  ],
+  "17": [
+    "from collections import defaultdict\n\nt = int(input())\n\nfor _ in range(t):\n    n = int(input())\n    a = list(map(int, input().split()))\n    freq = defaultdict(list)\n    for i, x in enumerate(a):\n        freq[x].append(i)\n    ans = 0\n    for i in range(n):\n        for j in range(i + 1, n):\n            for k in range(j + 1, n):\n                for l in range(k + 1, n):\n                    if a[i] == a[k] and a[j] == a[l]:\n                        ans += 1\n    print(ans)"
+  ],
+  "18": [
+    "import math\n\nt = int(input())\nfor _ in range(t):\n    n = int(input())\n    print(max(math.sin(math.pi / n), math.cos(math.pi / (2 * n))) ** -1)"
+  ],
+  "19": [
+    "from collections import defaultdict\n\nfor _ in range(int(input())):\n    n, k, d = map(int, input().split())\n    a = list(map(int, input().split()))\n    mp = defaultdict(int)\n    for i in range(d):\n        mp[a[i]] += 1\n    ans = len(mp)\n    for i in range(d, n):\n        if a[i - d] != a[i]:\n            mp[a[i - d]] -= 1\n            if mp[a[i - d]] == 0:\n                del mp[a[i - d]]\n            mp[a[i]] += 1\n        ans = min(ans, len(mp))\n    print(ans)"
+  ],
+  "20": [
+    "class Node:\n    def __init__(self, t, l, h):\n        self.t = t\n        self.l = l\n        self.h = h\n\ndef solve():\n    n, m = map(int, input().split())\n    nodes = []\n    for _ in range(n):\n        t, l, h = map(int, input().split())\n        nodes.append(Node(t, l, h))\n\n    left, right = m, m\n    for node in nodes:\n        if node.l > right or node.h < left:\n            print(\"NO\")\n            return\n        if node.t - node.l > 0:\n            left = max(left - (node.t - node.l), node.l)\n        if node.t - node.h > 0:\n            right = min(right + (node.t - node.h), node.h)\n        left = max(left, node.l)\n        right = min(right, node.h)\n\n    print(\"YES\")\n\nt = int(input())\nfor _ in range(t):\n    solve()"
+  ],
+  "21": [
+    "def find_k(S):\n    S = set(S)\n    for k in range(1, 1024):\n        if S == {x ^ k for x in S}:\n            return k\n    return -1\n\nt = int(input())\nfor _ in range(t):\n    n = int(input())\n    S = list(map(int, input().split()))\n    print(find_k(S))"
+  ],
+  "22": [
+    "def min_digit(n):\n    return min(int(digit) for digit in str(n))\n\ndef max_digit(n):\n    return max(int(digit) for digit in str(n))\n\nt = int(input())\nfor _ in range(t):\n    a1, k = map(int, input().split())\n    for _ in range(k - 1):\n        a1 += min_digit(a1) * max_digit(a1)\n    print(a1)"
+  ],
+  "23": [
+    "import heapq\nfor _ in range(int(input())):\n    n = int(input())\n    voters = []\n    for _ in range(n):\n        m, p = map(int, input().split())\n        voters.append((m, p))\n    voters.sort()\n    pq = []\n    cost = 0\n    for m, p in voters:\n        if m < n:\n            heapq.heappush(pq, p)\n            cost += p\n        elif pq:\n            cost -= heapq.heappop(pq)\n    print(cost)"
+  ],
+  "24": [
+    "t = int(input())\n\nfor _ in range(t):\n    d = int(input())\n    if d == 0 or d == 1:\n        print(\"Y\", d, d)\n    elif d == d ** 2:\n        print(\"N\")\n    else:\n        a = d / (1 + (1 + 4 * d) ** 0.5) / 2\n        b = d - a\n        print(\"Y\", a, b)"
+  ],
+  "26": [
+    "def solve(n, m):\n    if n == 1 and m == 1:\n        return \"YES\"\n    if n * m % 2 != 0:\n        return \"NO\"\n    return \"YES\"\n\nt = int(input())\nfor _ in range(t):\n    n, m = map(int, input().split())\n    print(solve(n, m))"
+  ],
+  "27": [
+    "from collections import defaultdict\nimport math\nimport heapq\n\ndef solve():\n    n = int(input())\n    a = list(map(int, input().split()))\n    a.sort(reverse=True)\n    d = defaultdict(int)\n    for i in a:\n        while i % 2 == 0:\n            d[i] += 1\n            i //= 2\n    h = []\n    for i in d:\n        heapq.heappush(h, (d[i], i))\n    ans = 0\n    while h:\n        cnt, num = heapq.heappop(h)\n        ans += cnt\n        for i in range(cnt):\n            if num % 2 == 0:\n                heapq.heappush(h, (d[num] - i, num // 2))\n    print(ans)\n\nt = int(input())\nfor _ in range(t):\n    solve()"
+  ],
+  "29": [
+    "```python\nfrom collections import defaultdict\n\ndef solve():\n    n = int(input())\n    a = list(map(int, input().split()))\n    last = defaultdict(lambda: n + 1)\n    first = defaultdict(lambda: -1)\n    for i, x in enumerate(a):\n        last[x] = min(last[x], i)\n        first[x] = max(first[x], i)\n    ans = [-1] * n\n    for i in range(1, n + 1):\n        mx = n + 1\n        for x in range(1, n + 1):\n            if first[x] == -1 or last[x] < n - i:\n                continue\n            mx = min(mx, max(first[x], n - i + 1))\n        if mx == n + 1:\n            ans[i - 1] = -1\n        else:\n            ans[i - 1] = mx\n    print(*ans)\n\nt = int(input())\nfor _ in range(t):\n    solve()\n```"
+  ],
+  "30": [
+    "t = int(input())\n\nfor _ in range(t):\n    n = int(input())\n    s = input()\n\n    cnt = 0\n    for i in range(1, n):\n        if s[i] == s[i - 1]:\n            cnt += 1\n\n    print((cnt + 1) // 2)"
+  ],
+  "31": [
+    "def skier_time(s):\n    x, y = 0, 0\n    visited = set()\n    time = 0\n    for i in range(len(s)):\n        if (x, y) not in visited:\n            time += 5\n            visited.add((x, y))\n        if s[i] == 'N':\n            y += 1\n        elif s[i] == 'S':\n            y -= 1\n        elif s[i] == 'E':\n            x += 1\n        else:\n            x -= 1\n    return time\n\nt = int(input())\nfor _ in range(t):\n    s = input()\n    print(skier_time(s))"
+  ],
+  "32": [
+    "def solve(n):\n    if n % 2 == 0:\n        return n // 2 - 1\n    else:\n        return n - 1\n\nt = int(input())\nfor _ in range(t):\n    n = int(input())\n    print(solve(n))"
+  ],
+  "33": [
+    "t = int(input())\n\nfor _ in range(t):\n    n = int(input())\n    print(2)\n    for i in range(n - 1, 1, -1):\n        print(i, i + 1)"
+  ],
+  "34": [
+    "def solve():\n    n = int(input())\n    if n >= 7:\n        print(9)\n    elif n >= 5:\n        print(8)\n    elif n >= 4:\n        print(7)\n    elif n >= 3:\n        print(6)\n    elif n >= 2:\n        print(5)\n    elif n == 1:\n        print(4)\n    else:\n        print(3)\n\nt = int(input())\nfor _ in range(t):\n    solve()"
+  ],
+  "35": [
+    "import heapq\nfor _ in range(int(input())):\n    n = int(input())\n    e = list(map(int, input().split()))\n    pq = []\n    for x in e:\n        heapq.heappush(pq, -x)\n    ans = 0\n    while pq:\n        group = 0\n        while pq and -pq[0] > group + 1:\n            heapq.heappop(pq)\n            group += 1\n        if group > 0:\n            ans += 1\n            heapq.heappop(pq)\n            heapq.heappop(pq)\n            for _ in range(group - 1):\n                heapq.heappop(pq)\n    print(ans)"
+  ],
+  "36": [
+    "n = int(input())\na = list(map(int, input().split()))\nm = int(input())\nq = list(map(int, input().split()))\n\nprefix_sum = [0]\nfor num in a:\n    prefix_sum.append(prefix_sum[-1] + num)\n\nfor worm in q:\n    left, right = 1, n + 1\n    while right - left > 1:\n        mid = (left + right) // 2\n        if worm <= prefix_sum[mid]:\n            right = mid\n        else:\n            left = mid\n    print(right)"
+  ]
+}

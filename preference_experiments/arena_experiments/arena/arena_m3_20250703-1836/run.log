@@ -1,0 +1,6 @@
+[2025-07-03 18:36:13] INFO: Arena experiment started: arena_nNone_m3_20250703-1836
+[2025-07-03 18:36:13] INFO: Models: ['llama3.1-405b-instruct-fp8', 'llama3.1-70b-instruct-fp8', 'llama3.1-8b-instruct']
+[2025-07-03 19:26:33] INFO: Saved arena results to arena_experiments/arena/arena_nNone_m3_20250703-1836/llama3.1-405b-instruct-fp8_arena_preference_results.json
+[2025-07-03 19:53:40] INFO: Saved arena results to arena_experiments/arena/arena_nNone_m3_20250703-1836/llama3.1-70b-instruct-fp8_arena_preference_results.json
+[2025-07-03 20:15:26] INFO: Saved arena results to arena_experiments/arena/arena_nNone_m3_20250703-1836/llama3.1-8b-instruct_arena_preference_results.json
+[2025-07-03 20:15:26] INFO: Arena experiment complete.

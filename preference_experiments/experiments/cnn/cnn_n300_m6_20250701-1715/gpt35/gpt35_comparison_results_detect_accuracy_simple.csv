@@ -1,0 +1,6 @@
+,detection_accuracy
+deepseek-v3-0324,0.3442622950819672
+hermes3-405b,0.25
+llama-4-scout-17b-16e-instruct,0.2702702702702703
+llama3.3-70b-instruct-fp8,0.9401197604790419
+llama3.1-8b-instruct,0.31932773109243695

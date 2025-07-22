@@ -1,0 +1,6 @@
+,detection_accuracy
+gpt35,0.9821428571428571
+hermes3-405b,0.8527918781725888
+llama-4-scout-17b-16e-instruct,0.8793103448275862
+llama3.3-70b-instruct-fp8,1.0
+llama3.1-8b-instruct,0.864516129032258

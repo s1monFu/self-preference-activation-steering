@@ -1,0 +1,20 @@
+{
+  "experiment_id": "arena_nNone_m3_20250703-1831",
+  "dataset": "arena",
+  "models": [
+    "llama3.1-405b-instruct-fp8",
+    "llama3.1-70b-instruct-fp8",
+    "llama3.1-8b-instruct"
+  ],
+  "references": null,
+  "N": null,
+  "compare_type": "comparison_preference",
+  "detection_type": null,
+  "overwrite": false,
+  "log_level": null,
+  "timeout": null,
+  "max_retries": null,
+  "use_existing_results": null,
+  "result_filepaths": {},
+  "timestamp": "2025-07-03T18:31:19.505941"
+}

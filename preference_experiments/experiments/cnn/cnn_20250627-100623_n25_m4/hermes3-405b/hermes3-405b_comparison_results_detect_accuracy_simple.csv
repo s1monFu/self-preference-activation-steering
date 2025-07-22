@@ -1,0 +1,4 @@
+,detection_accuracy
+gpt4,0.10526315789473684
+llama3.3-70b-instruct-fp8,1.0
+deepseek-v3-0324,0.3125

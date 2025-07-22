@@ -1,0 +1,77 @@
+{
+  "1": [
+    "def min_cost(cost, m, n):\n    if m == 0 and n == 0:\n        return cost[0][0]\n    elif m == 0:\n        return cost[0][n] + min_cost(cost, 0, n-1)\n    elif n == 0:\n        return cost[m][0] + min_cost(cost, m-1, 0)\n    else:\n        return cost[m][n] + min(min_cost(cost, m-"
+  ],
+  "2": [
+    "def similar_elements(t1, t2):\n    return tuple(set(t1) & set(t2))"
+  ],
+  "3": [
+    "def is_not_prime(n):\n    if n < 2:\n        return True\n    for i in range(2, int(n**0.5) + 1):\n        if n % i == 0:\n            return True\n    return False"
+  ],
+  "4": [
+    "import heapq\n\ndef heap_queue_largest(nums, n):\n    return heapq.nlargest(n, nums)"
+  ],
+  "5": [
+    "def count_ways(n):\n    if n == 0:\n        return 1\n    if n == 1:\n        return 0\n    if n == 2:\n        return 3\n    dp = [0] * (n + 1)\n    dp[0] = 1\n    dp[1] = 0\n    dp[2] = 3\n    for i in range(3, n + 1):\n        dp[i] ="
+  ],
+  "6": [
+    "def differ_At_One_Bit_Pos(x, y):\n    diff = x ^ y\n    return (diff & (diff - 1)) == 0"
+  ],
+  "7": [
+    "import re\n\ndef find_char_long(string):\n    return re.findall(r'\\b\\w{4,}\\b', string)"
+  ],
+  "8": [
+    "def square_nums(nums):\n    return list(map(lambda x: x**2, nums))"
+  ],
+  "9": [
+    "def find_Rotations(s):\n    rotations = 1\n    temp = s[1:] + s[0]\n    while temp != s:\n        temp = temp[1:] + temp[0]\n        rotations += 1\n    return rotations"
+  ],
+  "10": [
+    "def small_nnum(dataset, n):\n    return sorted(dataset)[:n]"
+  ],
+  "11": [
+    "def remove_Occ(string, char):\n    first = string.find(char)\n    last = string.rfind(char)\n    if first == last:\n        return string[:first] + string[first+1:]\n    else:\n        return string[:first] + string[first+1:last] + string[last+1:]"
+  ],
+  "12": [
+    "def sort_matrix(matrix):\n    return sorted(matrix, key=sum)"
+  ],
+  "13": [
+    "from collections import Counter\n\ndef count_common(words):\n    word_counts = Counter(words)\n    return word_counts.most_common()"
+  ],
+  "14": [
+    "def find_Volume(base, height, length):\n    return 0.5 * base * height * length"
+  ],
+  "15": [
+    "def split_lowerstring(s):\n    result = []\n    current = s[0]\n    for char in s[1:]:\n        if char.islower():\n            result.append(current)\n            current = ''\n        current += char\n    result.append(current)\n    return result"
+  ],
+  "16": [
+    "import re\n\ndef text_lowercase_underscore(text):\n    pattern = r'^[a-z]+_[a-z]+$'\n    if re.match(pattern, text):\n        return 'Found a match!'\n    else:\n        return 'Not matched!'"
+  ],
+  "17": [
+    "def square_perimeter(side_length):\n    return side_length * 4"
+  ],
+  "18": [
+    "def remove_dirty_chars(string, dirty_chars):\n    return ''.join(char for char in string if char not in dirty_chars)"
+  ],
+  "19": [
+    "def test_duplicate(arr):\n    return len(arr) != len(set(arr))"
+  ],
+  "20": [
+    "def is_woodall(n):\n    def woodall_number(n):\n        return n * (2 ** n - 1)\n    \n    i = 1\n    while woodall_number(i) <= n:\n        if woodall_number(i) == n:\n            return True\n        i += 1\n    return False"
+  ],
+  "21": [
+    "def multiples_of_num(m, n):\n    return [i*n for i in range(1, m+1)]"
+  ],
+  "22": [
+    "def find_first_duplicate(arr):\n    seen = set()\n    for num in arr:\n        if num in seen:\n            return num\n        seen.add(num)\n    return -1"
+  ],
+  "23": [
+    "def maximum_Sum(lst):\n    return max(sum(l) for l in lst)"
+  ],
+  "24": [
+    "def binary_to_decimal(binary):\n    decimal = 0\n    for digit in str(binary):\n        decimal = decimal*2 + int(digit)\n    return decimal"
+  ],
+  "25": [
+    "def find_Product(arr, n):\n    prod = 1\n    for i in range(n):\n        if arr.count(arr[i]) == 1:\n            prod *= arr[i]\n    return prod"
+  ]
+}

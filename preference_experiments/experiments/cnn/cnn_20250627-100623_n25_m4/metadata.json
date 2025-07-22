@@ -1,0 +1,20 @@
+{
+  "experiment_id": "cnn_20250627-100623_n25_m4",
+  "dataset": "cnn",
+  "models": [
+    "gpt4",
+    "llama3.3-70b-instruct-fp8",
+    "hermes3-405b",
+    "deepseek-v3-0324"
+  ],
+  "N": 25,
+  "compare_type": "comparison",
+  "detection_type": "detection",
+  "overwrite": false,
+  "log_level": "INFO",
+  "timeout": 120,
+  "max_retries": 10,
+  "use_existing_results": true,
+  "result_filepaths": {},
+  "timestamp": "2025-06-27T10:06:23.550157"
+}

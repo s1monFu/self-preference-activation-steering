@@ -1,0 +1,6 @@
+,self_preference_rate
+human,0.9375
+deepseek-v3-0324,0.8333333333333334
+hermes3-405b,0.925
+llama3.1-8b-instruct,0.90625
+llama3.3-70b-instruct-fp8,0.6470588235294118

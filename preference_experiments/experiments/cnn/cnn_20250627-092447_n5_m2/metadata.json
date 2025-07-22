@@ -1,0 +1,18 @@
+{
+  "experiment_id": "cnn_20250627-092447_n5_m2",
+  "dataset": "cnn",
+  "models": [
+    "llama3.2-3b-instruct",
+    "llama3.3-70b-instruct-fp8"
+  ],
+  "N": 5,
+  "compare_type": "comparison",
+  "detection_type": "detection",
+  "overwrite": false,
+  "log_level": "INFO",
+  "timeout": 120,
+  "max_retries": 10,
+  "use_existing_results": true,
+  "result_filepaths": {},
+  "timestamp": "2025-06-27T09:24:47.407161"
+}

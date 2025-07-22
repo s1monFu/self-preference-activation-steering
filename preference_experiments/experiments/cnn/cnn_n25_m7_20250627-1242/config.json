@@ -1,0 +1,20 @@
+{
+  "models": [
+    "gpt35",
+    "gpt4",
+    "llama3.3-70b-instruct-fp8",
+    "hermes3-405b",
+    "deepseek-v3-0324",
+    "llama3.1-8b-instruct",
+    "llama-4-scout-17b-16e-instruct"
+  ],
+  "N": 25,
+  "compare_type": "comparison",
+  "detection_type": "detection",
+  "overwrite": false,
+  "log_level": "INFO",
+  "timeout": 120,
+  "max_retries": 10,
+  "use_existing_results": true,
+  "dataset": "cnn"
+}

@@ -60,7 +60,7 @@ GPT_MODEL_ID = {
 
 load_dotenv()
 lambda_api_key = os.getenv("LAMBDA_API_KEY")
-lambda_api_base = "https://api.lambda.ai/v1"
+lambda_api_base = os.getenv("LAMBDA_API_URL") or "https://api.lambda.ai/v1"
 
 openai_api_key = os.getenv("OPENAI_API_KEY")
 openai_api_base = os.getenv("OPENAI_BASE_URL")

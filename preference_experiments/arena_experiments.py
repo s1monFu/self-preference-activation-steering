@@ -86,11 +86,33 @@ def load_arena_config(cli_args):
     return config
 
 def main():
-    parser = argparse.ArgumentParser(description="Run arena preference experiments with model-based evaluation.")
-    parser.add_argument("--compare_type", type=str, default="comparison_preference")
-    parser.add_argument("--overwrite", action="store_true")
-    parser.add_argument("--log_level", type=str, default=None)
-    parser.add_argument("--config", type=str, default=None)
+    parser = argparse.ArgumentParser(
+        description=(
+            "Run arena-style preference experiments using model-based evaluation.\n\n"
+            "This script compares model outputs in a head-to-head format using CSVs from arena_data/chat_arena/.\n"
+            "For each model, it evaluates preferences between its own and other models' responses to prompts.\n"
+            "Results are saved as JSON files in a timestamped output directory under arena_experiments/.\n\n"
+            "Typical usage:\n"
+            "  python arena_experiments.py --compare_type comparison_preference\n\n"
+            "Arguments:\n"
+            "  --compare_type   Type of comparison to use (default: comparison_preference)\n"
+            "  --overwrite      Overwrite existing results\n"
+            "  --log_level      Set logging level (e.g., INFO, DEBUG)\n"
+            "  --config         (Unused, for compatibility)\n"
+            "\n"
+            "CSV files should be placed in arena_data/chat_arena/ and named as <model>_preference_data.csv.\n"
+            "Each CSV should contain columns: id, self, other, prompt, self_response, other_response, won.\n"
+        ),
+        formatter_class=argparse.RawTextHelpFormatter
+    )
+    parser.add_argument("--compare_type", type=str, default="comparison_preference",
+                        help="Type of comparison to use for model preference (default: comparison_preference)")
+    parser.add_argument("--overwrite", action="store_true",
+                        help="Overwrite existing results in the output directory")
+    parser.add_argument("--log_level", type=str, default=None,
+                        help="Set logging level (e.g., INFO, DEBUG)")
+    parser.add_argument("--config", type=str, default=None,
+                        help="(Unused, for compatibility with other scripts)")
     
     args = parser.parse_args()
     cli_args = vars(args)

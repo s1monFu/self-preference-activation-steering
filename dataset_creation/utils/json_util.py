@@ -7,3 +7,12 @@ def write_jsonl(records, file_path):
         json_line = json.dumps(record, ensure_ascii=False) + "\n"
         file_handle.write(json_line)
     file_handle.close()
+
+def load_jsonl(file_path):
+    file_handle = Path(file_path).open("r", encoding="utf-8")
+    records = []
+    for line in file_handle:
+        if line.strip():
+            records.append(json.loads(line.strip()))
+    file_handle.close()
+    return records

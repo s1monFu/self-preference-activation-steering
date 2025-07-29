@@ -309,7 +309,7 @@ if __name__ == "__main__":
                     result["forward_detection"] = forward_choice
                     result["forward_detection_probability"] = exp(forward_result[0].logprob)
                     result["backward_detection"] = backward_choice
-                    result["forward_detection_probability"] = exp(forward_result[0].logprob)
+                    result["backward_detection_probability"] = exp(backward_result[0].logprob)
                     result["source"] = comparison_json_path
                     # Score: aggregate detection probabilities depending on choices
                     match (forward_choice, backward_choice):

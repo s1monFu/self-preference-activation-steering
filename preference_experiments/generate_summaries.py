@@ -41,9 +41,8 @@ def process_dataset(dataset, model, N, overwrite=False, extras=False):
         summaries = {}
     print(f"[INFO] {len(summaries)} existing responses found for {dataset}/{model} (target N={N}).")
     print(f"[INFO] {len(missing_keys)} missing responses to generate for {dataset}/{model}.")
-    get_fxn = get_summary if dataset not in code_datasets else get_code
     for key in tqdm(missing_keys, desc=f"Generating missing {dataset.upper()} responses for {model}"):
-        summaries[key] = get_fxn(articles[key], dataset, model)
+        summaries[key] = get_summary(articles[key], dataset, model)
         print(f"    [INFO] Generated response for key: {key}")
         print(summaries[key])
         with open(merged_file, "w") as f:

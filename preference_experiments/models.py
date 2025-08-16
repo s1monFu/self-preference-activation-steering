@@ -119,7 +119,6 @@ anthropic_client = anthropic.Anthropic()
 
 
 def get_gpt_summary(article, dataset, model) -> str:
-    
     history = [
         {"role": "system", "content": DATASET_SYSTEM_PROMPTS[dataset]},
         {
@@ -127,13 +126,33 @@ def get_gpt_summary(article, dataset, model) -> str:
             "content": f"Article:\n{article}\n\nProvide only the summary with no other text.",
         },
     ]
-    response = openai_client.chat.completions.create(
-        model=model,
-        messages=history,
-        max_tokens=100,
-        temperature=0,
-
-    )
+    attempts = 0
+    while attempts < 10:
+        try:
+            response = openai_client.chat.completions.create(
+                model=model,
+                messages=history,
+                max_tokens=100,
+                temperature=0
+            )
+            if not isinstance(response.choices[0].message.content, str):
+                print("List format")
+                return response.choices[0].message.content[0]
+            elif isinstance(response.choices[0].message.content, str):
+                print("String format")
+                return response.choices[0].message.content
+            else:
+                print("Unexpected content format:", response.choices[0].message.content)
+                raise ValueError("Unexpected content format of type " + str(type(response.choices[0].message.content)))
+            return response.choices[0].message.content
+        except openai.APITimeoutError:
+            attempts += 1
+            sleep(5)
+            print(f"Timeout error after {attempts} attempts, retrying...")
+        except Exception as e:
+            print(f"An unexpected error occurred: {e}")
+            sleep(5)
+            raise e
     return response.choices[0].message.content
 
 
@@ -201,13 +220,11 @@ def get_summary(article, dataset, model, pipe=None):
     if model == "gpt4":
         return get_gpt_summary(article, dataset, model="gpt-4-1106-preview")
     if model.endswith("gpt35"):
-        return (
-            get_gpt_summary(
+        return get_gpt_summary(
                 article,
                 dataset,
                 model=GPT_MODEL_ID[model],
-            ),
-        )
+            )
     # elif "llama" in model.lower():
     #     return (
     #         get_llama_summary(
@@ -217,13 +234,11 @@ def get_summary(article, dataset, model, pipe=None):
     #         )
     #     )
     else:
-        return (
-            get_gpt_summary(
+        return get_gpt_summary(
                 article,
                 dataset,
                 model=model,
-            ),
-        )
+            )
 
 
 def get_claude_summary(article, dataset="xsum"):
@@ -349,7 +364,7 @@ def get_gpt_choice(
             system_prompt = DETECTION_SYSTEM_PROMPT
             prompt = DETECTION_PROMPT_TEMPLATE_VS_MODEL.format(
                 summary1=summary1, summary2=summary2, article=article
-            )
+            )            
 
     history = [
         {"role": "system", "content": system_prompt},

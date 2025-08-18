@@ -1,0 +1,6 @@
+,self_preference_rate
+human,0.6875
+deepseek-v3-0324,0.2
+llama-4-scout-17b-16e-instruct,0.35
+llama3.1-8b-instruct,0.6
+llama3.3-70b-instruct-fp8,0.43333333333333335

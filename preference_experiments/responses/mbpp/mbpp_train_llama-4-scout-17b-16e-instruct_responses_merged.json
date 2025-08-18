@@ -1,0 +1,77 @@
+{
+  "1": [
+    "```python\ndef min_cost(cost, m, n):\n    dp = [[0 for _ in range(n + 1)] for _ in range(m + 1)]\n    dp[0][0] = cost[0][0]\n    for i in range(1, m + 1):\n        dp[i][0] = dp[i-1][0] + cost[i][0] if i < len(cost) else float('inf')\n    for j in range(1"
+  ],
+  "2": [
+    "```python\ndef similar_elements(tuple1, tuple2):\n    set1 = set(tuple1)\n    set2 = set(tuple2)\n    common = sorted(list(set1 & set2))\n    return tuple(common)\n```"
+  ],
+  "3": [
+    "```python\ndef is_not_prime(n):\n    if n <= 1:\n        return True\n    for i in range(2, int(n**0.5) + 1):\n        if n % i == 0:\n            return True\n    return False\n```"
+  ],
+  "4": [
+    "```python\nimport heapq\n\ndef heap_queue_largest(numbers, n):\n    return heapq.nlargest(n, numbers)\n```"
+  ],
+  "5": [
+    "```python\ndef count_ways(n):\n    if n % 2 != 0:\n        return 0\n    elif n == 0:\n        return 1\n    elif n == 2:\n        return 3\n\n    dp = [0] * (n + 1)\n    dp[0] = 1\n    dp[2] = 3\n\n    for i in range(4, n + 1, 2):\n        dp[i] ="
+  ],
+  "6": [
+    "```python\ndef differ_At_One_Bit_Pos(a, b):\n    xor = a ^ b\n    return bin(xor).count('1') == 1\n```"
+  ],
+  "7": [
+    "```python\nimport re\n\ndef find_char_long(s):\n    return re.findall(r'\\b\\w{4,}\\b', s)\n```"
+  ],
+  "8": [
+    "```python\ndef square_nums(nums):\n    return list(map(lambda x: x**2, nums))\n```"
+  ],
+  "9": [
+    "```python\ndef find_Rotations(s):\n    n = len(s)\n    s = s + s\n    for i in range(1, n):\n        if s[i:i+n] == s[:n]:\n            return i\n    return n\n```"
+  ],
+  "10": [
+    "```python\ndef small_nnum(dataset, n):\n    return sorted(dataset)[:n]\n```"
+  ],
+  "11": [
+    "```python\ndef remove_Occ(s, c):\n    try:\n        first_occ = s.index(c)\n        last_occ = s.rindex(c)\n        if first_occ == last_occ:\n            return s[:first_occ] + s[first_occ+1:]\n        else:\n            return s[:first_occ] + s[first_occ+1:last_occ] + s[last_occ+1:]\n    except ValueError:\n        return s\n```"
+  ],
+  "12": [
+    "```python\ndef sort_matrix(matrix):\n    return sorted(matrix, key=sum)\n```"
+  ],
+  "13": [
+    "```python\nfrom collections import Counter\n\ndef count_common(words):\n    counter = Counter(words)\n    return counter.most_common()[:-len(counter.most_common())+4]\n```"
+  ],
+  "14": [
+    "```python\ndef find_Volume(a, b, h):\n    return 0.5 * a * b * h\n```"
+  ],
+  "15": [
+    "```python\ndef split_lowerstring(s):\n    result = []\n    temp = ''\n    for char in s:\n        if char.islower():\n            temp += char\n        else:\n            if temp:\n                result.append(temp)\n                temp = ''\n    if temp:\n        result.append(temp)\n    return result\n```"
+  ],
+  "16": [
+    "```python\nimport re\n\ndef text_lowercase_underscore(s):\n    pattern = re.compile(r'^[a-z]+_[a-z]+$')\n    if pattern.match(s):\n        return 'Found a match!'\n    else:\n        return 'Not matched!'\n```"
+  ],
+  "17": [
+    "```python\ndef square_perimeter(side_length):\n    return 4 * side_length\n```"
+  ],
+  "18": [
+    "```python\ndef remove_dirty_chars(s1, s2):\n    s2_set = set(s2)\n    return ''.join(c for c in s1 if c not in s2_set)\n```"
+  ],
+  "19": [
+    "```python\ndef test_duplicate(arr):\n    return len(arr) != len(set(arr))\n```"
+  ],
+  "20": [
+    "```python\ndef is_woodall(n):\n    num_str = str(n)\n    return n == sum(int(digit) ** len(num_str) for digit in num_str)\n```"
+  ],
+  "21": [
+    "```python\ndef multiples_of_num(m, n):\n    return [i * n for i in range(1, m + 1)]\n```"
+  ],
+  "22": [
+    "```python\ndef find_first_duplicate(arr):\n    seen = set()\n    for num in arr:\n        if num in seen:\n            return num\n        seen.add(num)\n    return -1\n```"
+  ],
+  "23": [
+    "```python\ndef maximum_Sum(lists):\n    return max(sum(lst) for lst in lists)\n```"
+  ],
+  "24": [
+    "```python\ndef binary_to_decimal(binary):\n    decimal = 0\n    power = 0\n    while binary > 0:\n        digit = binary % 10\n        decimal += digit * (2 ** power)\n        binary //= 10\n        power += 1\n    return decimal\n```"
+  ],
+  "25": [
+    "```python\ndef find_Product(arr, n):\n    count = {}\n    for num in arr:\n        if num in count:\n            count[num] += 1\n        else:\n            count[num] = 1\n\n    product = 1\n    for num in count:\n        if count[num] == 1:\n            product *= num\n\n    return product\n```"
+  ]
+}

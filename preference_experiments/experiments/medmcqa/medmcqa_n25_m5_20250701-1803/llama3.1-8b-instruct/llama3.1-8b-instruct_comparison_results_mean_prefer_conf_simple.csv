@@ -1,0 +1,6 @@
+,mean_self_preference_confidence
+human,0.5682104519888784
+deepseek-v3-0324,0.6347538201832793
+hermes3-405b,0.5574499635873776
+llama-4-scout-17b-16e-instruct,0.37329709934637745
+llama3.3-70b-instruct-fp8,0.7058140904226684

@@ -1,0 +1,6 @@
+,mean_detection_confidence
+human,0.6113425708159803
+deepseek-v3-0324,0.2806478535792213
+llama-4-scout-17b-16e-instruct,0.34765923089031536
+llama3.1-8b-instruct,0.6930119078835486
+llama3.3-70b-instruct-fp8,0.3820549706774571

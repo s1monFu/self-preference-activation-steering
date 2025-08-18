@@ -1,0 +1,77 @@
+{
+  "1": [
+    "```python\ndef min_cost(cost, m, n):\n    dp = [[0 for _ in range(n+1)] for _ in range(m+1)]\n    dp[0][0] = cost[0][0]\n    for i in range(1, m+1):\n        dp[i][0] = dp[i-1][0] + cost[i][0]\n    for j in range(1, n+1):\n        dp[0][j] ="
+  ],
+  "2": [
+    "```python\ndef similar_elements(tuple1, tuple2):\n    return tuple(sorted(set(tuple1) & set(tuple2)))\n```"
+  ],
+  "3": [
+    "```python\ndef is_not_prime(n):\n    if n <= 1:\n        return True\n    if n == 2:\n        return False\n    if n % 2 == 0:\n        return True\n    for i in range(3, int(n**0.5) + 1, 2):\n        if n % i == 0:\n            return True\n    return False\n```"
+  ],
+  "4": [
+    "```python\nimport heapq\n\ndef heap_queue_largest(numbers, k):\n    return heapq.nlargest(k, numbers)\n```"
+  ],
+  "5": [
+    "```python\ndef count_ways(n):\n    if n % 2 != 0:\n        return 0\n    dp = [0] * (n + 1)\n    dp[0] = 1\n    dp[2] = 3\n    for i in range(4, n + 1, 2):\n        dp[i] = 4 * dp[i - 2] - dp[i - 4]\n    return dp[n]\n```"
+  ],
+  "6": [
+    "```python\ndef differ_At_One_Bit_Pos(a, b):\n    xor_result = a ^ b\n    return xor_result & (xor_result - 1) == 0 and xor_result != 0\n```"
+  ],
+  "7": [
+    "```python\nimport re\n\ndef find_char_long(text):\n    return re.findall(r'\\b\\w{4,}\\b', text)\n```"
+  ],
+  "8": [
+    "```python\nsquare_nums = lambda lst: list(map(lambda x: x**2, lst))\n```"
+  ],
+  "9": [
+    "```python\ndef find_Rotations(s):\n    n = len(s)\n    for i in range(1, n + 1):\n        if n % i == 0:\n            if s[:i] * (n // i) == s:\n                return i\n    return n\n```"
+  ],
+  "10": [
+    "```python\ndef small_nnum(dataset, n):\n    return sorted(dataset)[:n]\n```"
+  ],
+  "11": [
+    "```python\ndef remove_Occ(s, ch):\n    first = s.find(ch)\n    if first == -1:\n        return s\n    last = s.rfind(ch)\n    if first == last:\n        return s[:first] + s[first+1:]\n    return s[:first] + s[first+1:last] + s[last+1:]\n```"
+  ],
+  "12": [
+    "```python\ndef sort_matrix(matrix):\n    return sorted(matrix, key=lambda row: sum(row))\n```"
+  ],
+  "13": [
+    "```python\nfrom collections import Counter\n\ndef count_common(words):\n    counter = Counter(words)\n    return sorted(counter.items(), key=lambda x: (-x[1], x[0]))\n```"
+  ],
+  "14": [
+    "```python\ndef find_Volume(base, height, length):\n    return 0.5 * base * height * length\n```"
+  ],
+  "15": [
+    "```python\ndef split_lowerstring(s):\n    return [c for c in s if c.islower()]\n```"
+  ],
+  "16": [
+    "```python\nimport re\n\ndef text_lowercase_underscore(text):\n    pattern = r'^[a-z]+_[a-z]+$'\n    if re.search(pattern, text):\n        return 'Found a match!'\n    else:\n        return 'Not matched!'\n```"
+  ],
+  "17": [
+    "```python\ndef square_perimeter(side):\n    return 4 * side\n```"
+  ],
+  "18": [
+    "```python\ndef remove_dirty_chars(first, second):\n    return ''.join([char for char in first if char not in second])\n```"
+  ],
+  "19": [
+    "```python\ndef test_duplicate(nums):\n    return len(nums) != len(set(nums))\n```"
+  ],
+  "20": [
+    "```python\ndef is_woodall(n):\n    if n < 1:\n        return False\n    k = 1\n    while True:\n        woodall = k * (2 ** k) - 1\n        if woodall == n:\n            return True\n        if woodall > n:\n            return False\n        k += 1\n```"
+  ],
+  "21": [
+    "```python\ndef multiples_of_num(m, n):\n    return [n * i for i in range(1, m + 1)]\n```"
+  ],
+  "22": [
+    "```python\ndef find_first_duplicate(arr):\n    seen = set()\n    for num in arr:\n        if num in seen:\n            return num\n        seen.add(num)\n    return -1\n```"
+  ],
+  "23": [
+    "```python\ndef maximum_Sum(list_of_lists):\n    return max(sum(sublist) for sublist in list_of_lists)\n```"
+  ],
+  "24": [
+    "```python\ndef binary_to_decimal(binary):\n    decimal = 0\n    binary_str = str(binary)\n    length = len(binary_str)\n    for i in range(length):\n        decimal += int(binary_str[i]) * (2 ** (length - 1 - i))\n    return decimal\n```"
+  ],
+  "25": [
+    "```python\nfrom collections import Counter\n\ndef find_Product(arr, n):\n    counter = Counter(arr)\n    product = 1\n    for num in arr:\n        if counter[num] == 1:\n            product *= num\n    return product\n```"
+  ]
+}

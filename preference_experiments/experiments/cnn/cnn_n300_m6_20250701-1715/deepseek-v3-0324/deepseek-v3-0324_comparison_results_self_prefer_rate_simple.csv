@@ -1,0 +1,6 @@
+,self_preference_rate
+gpt35,0.96875
+hermes3-405b,0.8629441624365483
+llama-4-scout-17b-16e-instruct,0.8793103448275862
+llama3.3-70b-instruct-fp8,1.0
+llama3.1-8b-instruct,0.8096774193548387

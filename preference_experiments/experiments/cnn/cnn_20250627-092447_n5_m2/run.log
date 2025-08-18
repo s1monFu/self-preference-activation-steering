@@ -1,0 +1,29 @@
+[2025-06-27 09:24:47] INFO: Experiment started: cnn_20250627-092447_n5_m2
+[2025-06-27 09:24:47] INFO: Config: {
+  "models": [
+    "llama3.2-3b-instruct",
+    "llama3.3-70b-instruct-fp8"
+  ],
+  "N": 5,
+  "compare_type": "comparison",
+  "detection_type": "detection",
+  "overwrite": false,
+  "log_level": "INFO",
+  "timeout": 120,
+  "max_retries": 10,
+  "use_existing_results": true,
+  "dataset": "cnn"
+}
+[2025-06-27 09:24:47] INFO: Loading data for dataset: cnn, N=5, models=['llama3.2-3b-instruct', 'llama3.3-70b-instruct-fp8']
+[2025-06-27 09:24:47] INFO: Loaded 5 keys for dataset cnn
+[2025-06-27 09:24:47] INFO: Processing model: llama3.2-3b-instruct
+[2025-06-27 09:24:47] INFO: Running comparison experiment for llama3.2-3b-instruct
+[2025-06-27 09:24:51] INFO: Saved comparison results to experiments/cnn/cnn_20250627-092447_n5_m2/llama3.2-3b-instruct/llama3.2-3b-instruct_comparison_results.json
+[2025-06-27 09:24:51] INFO: Saved simplified metrics for llama3.2-3b-instruct
+[2025-06-27 09:24:51] INFO: Sanity check passed: 5 results for llama3.2-3b-instruct
+[2025-06-27 09:24:51] INFO: Processing model: llama3.3-70b-instruct-fp8
+[2025-06-27 09:24:51] INFO: Running comparison experiment for llama3.3-70b-instruct-fp8
+[2025-06-27 09:24:56] INFO: Saved comparison results to experiments/cnn/cnn_20250627-092447_n5_m2/llama3.3-70b-instruct-fp8/llama3.3-70b-instruct-fp8_comparison_results.json
+[2025-06-27 09:24:56] INFO: Saved simplified metrics for llama3.3-70b-instruct-fp8
+[2025-06-27 09:24:56] INFO: Sanity check passed: 5 results for llama3.3-70b-instruct-fp8
+[2025-06-27 09:24:56] INFO: Experiment complete.

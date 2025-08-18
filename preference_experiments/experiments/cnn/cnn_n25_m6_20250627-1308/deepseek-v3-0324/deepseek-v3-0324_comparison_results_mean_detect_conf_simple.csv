@@ -1,0 +1,6 @@
+,mean_detection_confidence
+gpt35,0.9138051822967443
+llama3.3-70b-instruct-fp8,0.9707424003840393
+hermes3-405b,0.8130862068098681
+llama3.1-8b-instruct,0.7871394172359395
+llama-4-scout-17b-16e-instruct,0.8239236128263556

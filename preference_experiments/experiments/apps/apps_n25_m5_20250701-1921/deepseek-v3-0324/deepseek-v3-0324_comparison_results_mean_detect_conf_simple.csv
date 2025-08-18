@@ -1,0 +1,6 @@
+,mean_detection_confidence
+human,0.9308986884189541
+hermes3-405b,0.7918983086856183
+llama-4-scout-17b-16e-instruct,0.4894440150723774
+llama3.1-8b-instruct,0.884528282336812
+llama3.3-70b-instruct-fp8,0.5317087092691227

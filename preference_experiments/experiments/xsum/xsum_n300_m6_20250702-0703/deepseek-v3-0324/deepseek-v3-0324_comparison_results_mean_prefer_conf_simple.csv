@@ -1,0 +1,6 @@
+,mean_self_preference_confidence
+gpt35,0.7480092804572183
+hermes3-405b,0.6908232032604098
+llama-4-scout-17b-16e-instruct,0.7951954112298609
+llama3.3-70b-instruct-fp8,0.99856494853972
+llama3.1-8b-instruct,0.8211315579467612

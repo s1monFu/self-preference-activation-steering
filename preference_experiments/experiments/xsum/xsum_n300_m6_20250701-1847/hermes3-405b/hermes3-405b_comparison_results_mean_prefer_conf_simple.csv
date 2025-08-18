@@ -1,0 +1,6 @@
+,mean_self_preference_confidence
+deepseek-v3-0324,0.45358429609677664
+gpt35,0.6391908476010953
+llama-4-scout-17b-16e-instruct,0.664751682828622
+llama3.3-70b-instruct-fp8,0.9665676705350928
+llama3.1-8b-instruct,0.7001281878717034

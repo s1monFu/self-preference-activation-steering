@@ -1,0 +1,15 @@
+{
+  "models": [
+    "llama3.2-3b-instruct",
+    "llama3.3-70b-instruct-fp8"
+  ],
+  "N": 5,
+  "compare_type": "comparison",
+  "detection_type": "detection",
+  "overwrite": false,
+  "log_level": "INFO",
+  "timeout": 120,
+  "max_retries": 10,
+  "use_existing_results": true,
+  "dataset": "cnn"
+}

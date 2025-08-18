@@ -1,0 +1,6 @@
+,detection_accuracy
+gpt35,0.8947368421052632
+llama3.3-70b-instruct-fp8,1.0
+deepseek-v3-0324,0.3125
+llama3.1-8b-instruct,0.5333333333333333
+llama-4-scout-17b-16e-instruct,0.09090909090909091

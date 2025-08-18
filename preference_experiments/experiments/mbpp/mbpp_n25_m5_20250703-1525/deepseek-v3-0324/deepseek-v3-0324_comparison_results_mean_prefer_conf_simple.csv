@@ -1,0 +1,6 @@
+,mean_self_preference_confidence
+human,0.8842685112211679
+hermes3-405b,0.6974075654957955
+llama-4-scout-17b-16e-instruct,0.6458414261334393
+llama3.1-8b-instruct,0.7972558171299607
+llama3.3-70b-instruct-fp8,0.7875826917270256

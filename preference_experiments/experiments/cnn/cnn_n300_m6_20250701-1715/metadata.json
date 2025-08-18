@@ -1,0 +1,30 @@
+{
+  "experiment_id": "cnn_n300_m6_20250701-1715",
+  "dataset": "cnn",
+  "models": [
+    "deepseek-v3-0324",
+    "gpt35",
+    "hermes3-405b",
+    "llama-4-scout-17b-16e-instruct",
+    "llama3.3-70b-instruct-fp8",
+    "llama3.1-8b-instruct"
+  ],
+  "references": [
+    "deepseek-v3-0324",
+    "gpt35",
+    "hermes3-405b",
+    "llama-4-scout-17b-16e-instruct",
+    "llama3.3-70b-instruct-fp8",
+    "llama3.1-8b-instruct"
+  ],
+  "N": 300,
+  "compare_type": "comparison",
+  "detection_type": "detection",
+  "overwrite": false,
+  "log_level": "INFO",
+  "timeout": 120,
+  "max_retries": 10,
+  "use_existing_results": true,
+  "result_filepaths": {},
+  "timestamp": "2025-07-01T17:15:13.442575"
+}
